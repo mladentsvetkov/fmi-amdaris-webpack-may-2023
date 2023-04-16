@@ -1,5 +1,5 @@
 // Sets the user email in the navbar
-document.querySelector('.user-email').textContent = `Who am I: ${window.userEmail}`
+document.querySelector('.user-email').textContent = `who_am_i: ${window.userEmail}`
 
 // Adds click event listener to module A link
 document.getElementById('moduleA-link').addEventListener('click', (event) => {

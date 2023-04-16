@@ -31,11 +31,17 @@ function renderModuleA() {
       #moduleA-button:active {
         box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
       }
+      img { 
+        max-height: 10rem;
+        display: block;
+        margin-top: 10px;
+      }
     </style>
     <div id="moduleA">
       <h1>Micro App A</h1>
-      <p>Who am I: ${window.userEmail}</p>
+      <p>who_am_i: ${window.userEmail}</p>
       <button id='moduleA-button'>Click here in this module to increase the counter.</button>
+      <img src='assets/module-a-image-435k.png'/>
     </div>
   `
     // Add an event listener to the button to dispatch a custom event on click
