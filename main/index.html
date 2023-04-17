@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>FMI Amdaris Demo</title>
+        <link rel="stylesheet" href="index.css" />
+    </head>
+    <body>
+        <nav>
+            <div class="nav-links">
+                <!-- Link for Module A -->
+                <a href="#/moduleA" id="moduleA-link" class="active">Module A</a>
+                <!-- Link for Module B -->
+                <a href="#/moduleB" id="moduleB-link">Module B</a>
+            </div>
+            <div>
+                <!-- Display the user email -->
+                <span class="user-email"></span>
+                <!-- Display the Module A click counter -->
+                <span class="click-counter" id="moduleA-counter">Module A clicks: 0</span>
+                <!-- Display the Module B click counter -->
+                <span class="click-counter" id="moduleB-counter">Module B clicks: 0</span>
+            </div>
+        </nav>
+        <!-- Container for rendering the module content -->
+        <div id="content"></div>
+        <!-- Import utility functions -->
+        <script src="src/utils.js"></script>
+        <!-- Import the main JavaScript file -->
+        <script src="src/main.js"></script>
+    </body>
+</html>

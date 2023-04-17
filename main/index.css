@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Delicious+Handrawn&family=Ubuntu+Mono&display=swap');
+/* Set margin and padding to 0 for HTML and body */
+html,
+body {
+    margin: 0;
+    padding: 6rem 3rem;
+}
+
+body {
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+input,
+textarea,
+button {
+    font-family: inherit;
+}
+
+/* Style the navigation bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+/* Style the navigation links */
+nav .nav-links {
+    display: flex;
+    justify-content: stretch;
+    gap: 2px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 2px;
+    transition: background-color 0.3s;
+}
+
+/* Set hover opacity for navigation links */
+nav a:hover {
+    opacity: 0.5;
+}
+
+/* Set active style for active navigation link */
+.active {
+    border-bottom: 2px solid rgba(220, 0, 0, 1);
+}
+
+/* Style for the user email and module click counters */
+.user-email,
+.click-counter {
+    color: white;
+    margin-right: 10px;
+}
+
+#moduleA-counter {
+    padding: 2px 4px;
+    color: #bacbe8;
+    border: 1px solid #bacbe8;
+}
+
+#moduleB-counter {
+    padding: 2px 4px;
+    color: #e3e8ba;
+    border: 1px solid #e3e8ba;
+}
