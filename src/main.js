@@ -4,14 +4,14 @@ document.querySelector('.user-email').textContent = `who_am_i: ${window.userEmai
 // Adds click event listener to module A link
 document.getElementById('moduleA-link').addEventListener('click', (event) => {
     event.preventDefault() // Prevents default link behavior
-    renderModuleA() // Renders Module A
+    loadModuleA() // Renders Module A
     setActiveLink('moduleA-link') // Sets Module A link as active
 })
 
 // Adds click event listener to Module B link
 document.getElementById('moduleB-link').addEventListener('click', (event) => {
     event.preventDefault() // Prevents default link behavior
-    renderModuleB() // Renders Module B
+    loadModuleB() // Renders Module B
     setActiveLink('moduleB-link') // Sets Module B link as active
 })
 
@@ -31,17 +31,40 @@ const moduleBCounter = document.getElementById('moduleB-counter')
 let moduleAClicks = 0
 let moduleBClicks = 0
 
-// Adds event listener for Module A click event
-window.addEventListener('moduleAClick', () => {
+// Functions to increment the counter
+function incrementCounterA() {
     moduleAClicks++
     moduleACounter.innerText = `Module A clicks: ${moduleAClicks}`
-})
-
-// Adds event listener for Module B click event
-window.addEventListener('moduleBClick', () => {
+}
+function incrementCounterB() {
     moduleBClicks++
     moduleBCounter.innerText = `Module B clicks: ${moduleBClicks}`
-})
+}
 
-// Renders Module A on page load
-renderModuleA()
+// Expose the incrementCounter functions to be used by moduleA/B later
+window.incrementCounterA = incrementCounterA
+window.incrementCounterB = incrementCounterB
+
+// Function to load modules
+function loadModuleA() {
+    // This will be replaced by the actual Webpack Module Federation code later
+    const scriptA = document.createElement('script')
+    scriptA.src = 'src/moduleA/moduleA.js'
+    scriptA.onload = () => {
+        renderModuleA()
+    }
+    document.body.appendChild(scriptA)
+}
+
+function loadModuleB() {
+    // This will be replaced by the actual Webpack Module Federation code later
+    const scriptB = document.createElement('script')
+    scriptB.src = 'src/moduleB/moduleB.js'
+    scriptB.onload = () => {
+        renderModuleB()
+    }
+    document.body.appendChild(scriptB)
+}
+
+// Load modules on page load
+loadModuleA()

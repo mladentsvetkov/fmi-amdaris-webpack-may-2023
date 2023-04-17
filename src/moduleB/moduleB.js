@@ -46,9 +46,6 @@ function renderModuleB() {
   `
     // Add an event listener to the button to dispatch a custom event on click
     document.getElementById('moduleB-button').addEventListener('click', () => {
-        window.dispatchEvent(new CustomEvent('moduleBClick'))
+        window.incrementCounterB()
     })
 }
-
-// Call the renderModuleA function to render the module
-renderModuleB()

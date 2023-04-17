@@ -44,11 +44,7 @@ function renderModuleA() {
       <img src='assets/module-a-image-435k.png'/>
     </div>
   `
-    // Add an event listener to the button to dispatch a custom event on click
     document.getElementById('moduleA-button').addEventListener('click', () => {
-        window.dispatchEvent(new CustomEvent('moduleAClick'))
+        window.incrementCounterA()
     })
 }
-
-// Call the renderModuleA function to render the module
-renderModuleA()
