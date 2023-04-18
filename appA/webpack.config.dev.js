@@ -25,8 +25,11 @@ module.exports = {
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 8192,
-                            name: 'assets/[name].[hash:8].[ext]',
+                            // Set the limit to 300 KB (300 * 1024 bytes)
+                            limit: 300 * 1024,
+                            // For larger files, save them in the 'images' folder with a hashed name
+                            fallback: 'file-loader',
+                            name: 'images/[name].[hash:8].[ext]',
                         },
                     },
                 ],
