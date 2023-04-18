@@ -1,9 +1,8 @@
-// webpack.config.js
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { ModuleFederationPlugin } = require('webpack').container
 
 module.exports = {
-    entry: './src/main.js',
+    entry: './main.js',
     mode: 'development',
     devServer: {
         port: 3000,
@@ -39,9 +38,9 @@ module.exports = {
             name: 'mainApp',
             filename: 'remoteEntry.js',
             exposes: {
-                './incrementCounterA': './src/main.js',
-                './incrementCounterB': './src/main.js',
-                './who_am_i': './src/main.js',
+                './incrementCounterA': './main.js',
+                './incrementCounterB': './main.js',
+                './who_am_i': './main.js',
             },
             remotes: {
                 moduleA: 'moduleA@http://localhost:3001/remoteEntry.js',

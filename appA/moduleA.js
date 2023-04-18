@@ -3,8 +3,8 @@ import imageSrc from './module-a-image-435k.png'
 import { incrementCounterA } from 'mainApp/incrementCounterA'
 import { who_am_i } from 'mainApp/who_am_i'
 
-// Define the function to render Module A
-export function renderModuleA() {
+// Define the function to render micro front end A
+function renderModuleA() {
     // Get the container element by ID
     const container = document.getElementById('content')
     // Set the HTML of the container element
@@ -21,4 +21,4 @@ export function renderModuleA() {
     })
 }
 
-renderModuleA()
+export { renderModuleA }
