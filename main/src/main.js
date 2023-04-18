@@ -1,5 +1,20 @@
+import '/index.css'
+
+async function loadModuleA() {
+    const { renderModuleA } = await import('moduleA/ModuleA')
+    renderModuleA()
+}
+
+async function loadModuleB() {
+    const { renderModuleB } = await import('moduleB/ModuleB')
+    renderModuleB()
+}
+
+// main.js
+export const who_am_i = 'FMI Student #1'
+
 // Sets the user email in the navbar
-document.querySelector('.user-email').textContent = `who_am_i: ${window.userEmail}`
+document.querySelector('.user-email').textContent = `who_am_i: ${who_am_i}`
 
 // Adds click event listener to module A link
 document.getElementById('moduleA-link').addEventListener('click', (event) => {
@@ -32,38 +47,13 @@ let moduleAClicks = 0
 let moduleBClicks = 0
 
 // Functions to increment the counter
-function incrementCounterA() {
+export function incrementCounterA() {
     moduleAClicks++
     moduleACounter.innerText = `Module A clicks: ${moduleAClicks}`
 }
-function incrementCounterB() {
+export function incrementCounterB() {
     moduleBClicks++
     moduleBCounter.innerText = `Module B clicks: ${moduleBClicks}`
-}
-
-// Expose the incrementCounter functions to be used by moduleA/B later
-window.incrementCounterA = incrementCounterA
-window.incrementCounterB = incrementCounterB
-
-// Function to load modules
-function loadModuleA() {
-    // This will be replaced by the actual Webpack Module Federation code later
-    const scriptA = document.createElement('script')
-    scriptA.src = 'src/moduleA/moduleA.js'
-    scriptA.onload = () => {
-        renderModuleA()
-    }
-    document.body.appendChild(scriptA)
-}
-
-function loadModuleB() {
-    // This will be replaced by the actual Webpack Module Federation code later
-    const scriptB = document.createElement('script')
-    scriptB.src = 'src/moduleB/moduleB.js'
-    scriptB.onload = () => {
-        renderModuleB()
-    }
-    document.body.appendChild(scriptB)
 }
 
 // Load modules on page load
