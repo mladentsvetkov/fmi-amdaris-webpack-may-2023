@@ -1,3 +1,4 @@
+const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { ModuleFederationPlugin } = require('webpack').container
 
@@ -9,6 +10,8 @@ module.exports = {
     },
     output: {
         publicPath: 'http://localhost:3000/',
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].js',
     },
     module: {
         rules: [
