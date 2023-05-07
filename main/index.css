@@ -23,6 +23,11 @@ nav {
     align-items: center;
     background-color: #333;
     padding: 10px;
+    gap: 2rem;
+}
+
+.nav-status-items {
+    display: flex;
 }
 
 /* Style the navigation links */
