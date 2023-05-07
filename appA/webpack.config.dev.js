@@ -21,18 +21,15 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            // Set the limit to 300 KB (300 * 1024 bytes)
-                            limit: 300 * 1024,
-                            // For larger files, save them in the 'images' folder with a hashed name
-                            fallback: 'file-loader',
-                            name: 'images/[name].[hash:8].[ext]',
-                        },
+                type: 'asset',
+                parser: {
+                    dataUrlCondition: {
+                        maxSize: 300 * 1024, // 300 KB
                     },
-                ],
+                },
+                generator: {
+                    filename: 'images/[name].[hash:8][ext]',
+                },
             },
         ],
     },
